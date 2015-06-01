@@ -1,0 +1,98 @@
+.contents {
+	margin-top:20px;
+	width: 100%;
+	height:auto;
+	@include pie-clearfix;
+
+	& > .main {
+		@include float(left);
+		width:685px;
+		height:auto;
+	}
+
+	& > .sub {
+		@include float(right);
+		width:300px;
+		height:auto;
+		
+	}
+}
+
+//main Content
+.main {
+
+}
+
+//sub Side Ads
+div.sub {
+	& > div {
+		margin-top:20px;
+		width: 100%;
+		height:auto;
+		
+		&:first-child { 
+			margin-top:0; 
+		}
+	}
+}
+
+//gameLiveScore
+.gameLiveScore {
+	width:100%;
+	height:300px;
+
+	& > .glsTitle {
+		width:100%;
+		height:30px;
+		background: $blue;
+		
+		@include fontSize($defFont - 1);
+		color:#fff;
+		line-height: 30px;
+		text-align:center;
+		letter-spacing: 2px;
+	}
+
+	& > .glsContent {
+		position: relative;
+		width:100%;
+		height:270px;
+		background: url(#{$img-path}/gameLiveScore_bg.jpg) bottom no-repeat;
+	}
+
+
+	//LiveText
+	.liveText {
+		position: absolute;
+		top:15px;
+		left:15px;
+
+		width:100px;
+		height:30px;
+		padding-left:85px;
+		
+		@include fontSize($defFont + 3);
+		color:#fff;
+		letter-spacing: 2px;
+		line-height: 30px;
+
+
+		&:before {
+			position: absolute;
+			left:0;
+			top:0;
+
+			display: block;
+			content: "直播中";
+			width:80px;
+			height:100%;
+			background: $orange;
+
+			@include fontSize($defFont + 2);
+			color:#fff;
+			text-align: center;
+			line-height: 30px;
+			letter-spacing: 2px;
+		}
+	}
+}
