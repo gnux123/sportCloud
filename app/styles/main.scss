@@ -2,50 +2,30 @@
 // endbower
 @import "compass/reset";
 @import "susy";
-
+@import "compass/utilities";
+@import "compass/typography";
 
 @import "bower_components/animate.scss/animate";
 
-
+@import "_val";
 @import "_function";
 @import "_mixin";
-@import "_settings";
+@import "_layout";
 
 
-body {
-  background: #fafafa;
-  font-family: Helvetica, Arial, 'LiHei Pro', '微軟正黑體', sans-serif;
-  color: #333;
+body { 
+  font-family: Helvetica, Arial, 'cwTeXHei', '微軟正黑體', sans-serif; 
+  background: #000;
+  @include fontSize($defFont);
 }
 
-/* use resposive web settings like 
-*
-*@include susy-breakpoint($break-[mobile/padlet/desktop],$[mobile/padlet/desktop]){
-*   do something...
-*}
-*
-*/
-
-
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-}
-
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+@font-face {
+  font-family: 'cwTeXHei';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'),
+       url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
 }
