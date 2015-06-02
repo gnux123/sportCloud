@@ -1,0 +1,216 @@
+//gameLiveScore
+.gameLiveScore {
+	width:100%;
+	height:300px;
+
+	& > .glsTitle {
+		width:100%;
+		height:30px;
+		background: $blue;
+		
+		@include fontSize($defFont - 1);
+		color:#fff;
+		line-height: 30px;
+		text-align:center;
+		letter-spacing: 2px;
+	}
+
+	& > .glsContent {
+		position: relative;
+		width:100%;
+		height:270px;
+		background: url(#{$img-path}/gameLiveScore_bg.jpg) center no-repeat;
+
+	}
+
+
+	//LiveText
+	.liveText {
+		position: absolute;
+		top:15px;
+		left:15px;
+
+		width:100px;
+		height:30px;
+		padding-left:85px;
+		
+		@include fontSize($defFont + 3);
+		color:#fff;
+		letter-spacing: 2px;
+		line-height: 30px;
+
+
+		&:before {
+			position: absolute;
+			left:0;
+			top:0;
+
+			display: block;
+			content: "直播中";
+			width:80px;
+			height:100%;
+			background: $orange;
+
+			@include fontSize($defFont + 2);
+			color:#fff;
+			text-align: center;
+			line-height: 30px;
+			letter-spacing: 2px;
+		}
+	}
+
+
+	//team scores
+	.scores {
+		position: absolute;
+		top:65px;
+		width:120px;
+		height:180px;
+	
+		& > span {
+			display: block;
+			width:100%;
+			height:auto;
+			margin-bottom: 15px;
+
+			text-align: center;
+			color:#fff;
+			font-weight:bolder;
+			letter-spacing: 1px;
+
+
+			&.area { 
+				margin-top:30px;
+				@include fontSize($defFont + 6); 
+			}
+			&.name { @include fontSize($defFont + 26); }
+			&.teamScore { 
+				font-family: arial;
+				font-weight: bolder;
+				@include fontSize($defFont + 16); 
+			}
+		}
+
+
+		&.homeTeam {
+			left:15px;
+		}
+	
+		&.awayTeam {
+			right:15px;
+		}
+	}
+
+}
+
+
+//latestNews Module
+.latestNews {
+	width:100%;
+	height:auto;
+
+	& > .lnsTitle {
+		@extend %titleStyle;
+	}
+
+	& > .newsContent {
+		margin-top: 15px;
+		width:100%;
+		height:auto;
+
+		li {
+			display: block;
+			width:100%;
+			height:35px;
+			border-top:1px solid #fff;
+			background: $gray-l;
+
+			&:first-child { border-top:0; }
+
+			& > a {
+				display: block;
+				width:100%;
+				height:35px;
+
+				text-decoration: none;
+				color:#000;
+				line-height: 35px;
+			}
+
+			& > a > i {
+				margin:0 10px;
+
+				font-weight: bolder;
+				color:$blue;
+			}
+		}
+	}
+
+}
+
+//nearTerm events
+.nearTermEvents	{
+	& > .nteTitle {
+		@extend %titleStyle;
+	}
+
+	& > .nteContent {
+		margin-top: 15px;
+		width:100%;
+		height:auto;
+		
+		li {
+			display: block;
+			width:100%;
+			height:64px;
+			border-top:1px solid $gray;
+			background: $gray-l;
+
+			&:first-child { border-top:0; }
+			
+			a {
+				display: block;
+				width:100%;
+				height:100%;
+				@include pie-clearfix;
+
+				& > div { @include float(left); }
+
+			}
+		
+			.date, .btnGo {
+				width:64px;
+				height: 64px;
+
+				color:#fff;
+				text-align: center;
+				line-height: 64px;
+				@include fontSize($defFont + 8);
+				font-family: arial;
+				font-weight: bold;
+				
+			}
+
+
+			.date {
+				background: $blue;
+			}
+
+			.btnGo {
+				background: $gray-d;
+			}
+
+			.texts {
+				width: 152px;
+				height:40px;
+				@include border-box-sizing;
+				padding:12px 10px;
+
+				color:#000;
+				@include fontSize($defFont + 1);
+				line-height: 20px;
+			}
+		}
+
+	}
+}

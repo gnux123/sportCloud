@@ -18,13 +18,9 @@
 	}
 }
 
-//main Content
-.main {
 
-}
-
-//sub Side Ads
-div.sub {
+//main and sub
+div.main, div.sub {
 	& > div {
 		margin-top:20px;
 		width: 100%;
@@ -36,63 +32,230 @@ div.sub {
 	}
 }
 
-//gameLiveScore
-.gameLiveScore {
-	width:100%;
-	height:300px;
 
-	& > .glsTitle {
-		width:100%;
-		height:30px;
-		background: $blue;
-		
-		@include fontSize($defFont - 1);
-		color:#fff;
-		line-height: 30px;
-		text-align:center;
-		letter-spacing: 2px;
-	}
+//slideNews
+.slideNews {
+	position: relative;
+	height:310px;
 
-	& > .glsContent {
+	.slideNewsMain {
 		position: relative;
-		width:100%;
-		height:270px;
-		background: url(#{$img-path}/gameLiveScore_bg.jpg) bottom no-repeat;
+		top:0;
+		left:0;
+		width:445px;
+		height:310px;
+		overflow: hidden;
+
+		& > div {
+			position: absolute;
+			top:0;
+			left:0;
+
+			width:1000em;
+			height:100%;
+			@include pie-clearfix;
+
+			a {
+				@include float(left);
+
+				display: block;
+				width:445px;
+				height:100%;
+			}
+		}
+
 	}
 
 
-	//LiveText
-	.liveText {
+	& > .slideNavs {
 		position: absolute;
-		top:15px;
-		left:15px;
+		top:0;
+		right:0;
 
-		width:100px;
-		height:30px;
-		padding-left:85px;
-		
-		@include fontSize($defFont + 3);
-		color:#fff;
-		letter-spacing: 2px;
-		line-height: 30px;
+		width:240px;
+		height:auto;
+	
+		li {
+			display: block;
+			width:100%;
+			height:38px;
 
+			a {
+				display: block;
+				width:230px;
+				height:37px;
+				margin-top:1px;
+				padding-left: 10px;
+				background: #000;
+
+
+				color:#fff;
+				line-height: 37px;
+				text-decoration: none;
+				letter-spacing: 1px;
+
+				&:hover { background: $blue; }
+
+			}
+
+			&:first-child a { margin-top:0; }
+
+		}
+	}
+
+}
+
+//latestVideos
+.latestVideos {
+	.lvTitle {
+		@extend %titleStyle;
 
 		&:before {
-			position: absolute;
-			left:0;
-			top:0;
-
-			display: block;
-			content: "直播中";
-			width:80px;
-			height:100%;
-			background: $orange;
+			content:"▶";
+			padding:0;
+			background: $blue;
 
 			@include fontSize($defFont + 2);
-			color:#fff;
+			font-style: normal;
 			text-align: center;
-			line-height: 30px;
-			letter-spacing: 2px;
+			line-height: 31px;
+		}
+	}
+
+	.lvContent {
+		margin-top:15px;
+		width:100%;
+		height:180px;
+
+		li {
+			@include float(left);
+			display: block;
+			width:221px;
+			height:180px;
+			margin-left:11px;
+			background: #fff;
+
+			&:first-child { margin-left:0; }
+
+			a {
+				display: block;
+				width:100%;
+				padding:10px 0;
+
+				@include fontSize($defFont + 2);
+				text-decoration: none;
+				text-align: center;
+				color:#000;
+				line-height: 18px;
+				letter-spacing: 1px;
+			}
+		}
+	}
+}
+
+
+//focusNews
+.foucsNews {
+	margin-top: 20px;
+	
+	& > ul > li {
+		@include float(left);
+		display: block;
+		
+		width:337px;
+		height:auto;
+		margin-left:11px;
+		margin-top:10px;
+
+		&:nth-child(2n+1) {
+			margin-left:0;
+		}
+	}
+
+	//title
+	.focusTitle {
+		@extend %titleStyle;
+
+		width:327px;
+		background: $blue;
+		padding-left: 10px;
+		&:before { display: none; }
+	}
+
+	//mainGroup
+	.foucsGroup {
+		display: block;
+		width:100%;
+		height:auto;
+	}
+
+
+	.foucsGroup > ul > li {
+		display: block;
+		width:100%;
+		height:auto;
+		overflow-x:hidden;
+
+		a {
+			display: block;
+			width:100%;
+		}
+
+		&.fgMain > a {
+			height:auto;
+			background: #fff;
+			text-decoration: none;
+			padding-bottom:10px;
+		}
+
+		&.fgMain {
+			& > a > span { 
+				display: block;
+				width:307px;
+				padding:0 15px;
+
+				letter-spacing: 1px;
+			}
+
+			.fgMainText {
+				@include fontSize($defFont + 5);
+				font-weight:bolder;
+				line-height: 25px;
+				color:#000;
+			}
+
+			.fgMainDes {
+				margin-top:5px;
+
+				@include fontSize($defFont - 2);
+				line-height: 16px;
+				color:$gray-d;
+
+			}
+		}
+
+
+		&.fgSub {
+			height:39px;
+			background: $gray-l;
+			border-top:1px solid #fff;
+
+			& > a {
+				position: relative;
+				padding-left:10px; 
+				
+				color:#000;
+				line-height: 39px;
+				text-decoration: none;
+
+				&:before {
+					position: absolute;
+					right:20px;
+
+					@include fontSize($defFont + 16);
+					color:$gray;
+				}
+			}
 		}
 	}
 }
