@@ -125,32 +125,27 @@ module.exports = function (grunt) {
       server: '.tmp'
     },
 
-    //includes: {
-    //  serve: {
-    //    files: {
-    //      src: ['index.html', 'layout/*.html'], // Source files
-    //      dest: '.tmp/', // Destination directory
-    //      cwd: '<%= config.app %>',
-    //      flatten: true
-    //    },
-    //    options: {
-    //      silent: true,
-    //      banner: ''
-    //    }
-    //  },
-    //  build: {
-    //    files: {
-    //      src: ['index.html', 'layout/*.html'], // Source files
-    //      dest: '<%= config.dist %>', // Destination directory
-    //      cwd: '<%= config.app %>',
-    //      flatten: true
-    //    },
-    //    options: {
-    //      silent: true,
-    //      banner: ''
-    //    }
-    //  }
-    //},
+
+    includes: {
+      build: {
+          cwd: '<%= config.app %>',
+          src: ['*.html', 'layout/*.html'],
+          dest: '<%= config.dist %>',
+          options: {
+              flatten: true,
+              banner: ''
+          }
+      },
+      server: {
+          cwd: '<%= config.app %>',
+          src: ['*.html', 'layout/*.html'],
+          dest: '.tmp/',
+          options: {
+              flatten: true,
+              banner: ''
+          }
+      }
+    },
 
 
     // Make sure code styles are up to par and there are no obvious mistakes
@@ -199,10 +194,25 @@ module.exports = function (grunt) {
           cwd: '<%= config.app %>/styles',
           src: ['*.{scss,sass}'],
           dest: '.tmp/styles',
-        browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
+          ext: '.css'
+        }]
       }
     },
 
+    // Add vendor prefixed styles
+    autoprefixer: {
+      options: {
+        browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '.tmp/styles/',
+          src: '{,*/}*.css',
+          dest: '.tmp/styles/'
+        }]
+      }
+    },
 
     // Automatically inject Bower components into the HTML file
     wiredep: {
@@ -388,7 +398,7 @@ module.exports = function (grunt) {
     }
   });
 
-  //grunt.loadNpmTasks('grunt-includes');
+  grunt.loadNpmTasks('grunt-includes');
 
 
   grunt.registerTask('serve', 'start the server and preview your app, --allow-remote for remote access', function (target) {
@@ -402,7 +412,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'wiredep',
-      //'includes:server',
+      'includes:server',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -433,7 +443,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    //'includes:build',
+    'includes:build',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
