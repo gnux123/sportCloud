@@ -129,16 +129,17 @@ module.exports = function (grunt) {
     includes: {
       build: {
           cwd: '<%= config.app %>',
-          src: ['*.html', 'layout/*.html'],
+          src: ['*.html'],
           dest: '<%= config.dist %>',
           options: {
               flatten: true,
+              includePath: '',
               banner: ''
           }
       },
       server: {
           cwd: '<%= config.app %>',
-          src: ['*.html', 'layout/*.html'],
+          src: ['*.html'],
           dest: '.tmp/',
           options: {
               flatten: true,
@@ -443,7 +444,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'includes:build',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
@@ -452,10 +452,11 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'copy:dist',
+    'includes:build',
     'modernizr',
     'rev',
     'usemin',
-    'htmlmin',
+    'htmlmin'
   ]);
 
   grunt.registerTask('default', [
