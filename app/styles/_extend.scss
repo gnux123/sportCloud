@@ -67,10 +67,10 @@
 
 		&:first-child { margin-left:0; }
 
-		a {
+		& > a {
 			display: block;
-			width:100%;
-			padding:10px 0;
+			width:211px;
+			padding:10px 5px;
 
 			@include fontSize($defFont + 2);
 			text-decoration: none;
@@ -86,6 +86,7 @@
 			overflow: hidden;
 		}
 		.coverImg > a {
+			width:100%;
 			padding:0;
 		}
 	}
