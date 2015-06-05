@@ -1,0 +1,104 @@
+.main > div.newsLists {
+	h2 { 
+		@include fontSize($defFont + 12);
+		color:#fff;
+		letter-spacing: 1px;
+	}
+}
+
+.newsListsContent {
+	display: block;
+	width:100%;
+	height: auto;
+
+	& > ul > li {
+		display: block;
+		width:100%;
+		height:150px;
+		background: #fff;
+		margin-top:20px;
+
+		&:first-child { margin-top:0; }
+
+		a {
+			display: block;
+			width:100%;
+			height:100%;
+		}
+	}
+
+	& > ul > li a {
+		@include pie-clearfix;
+	}
+
+	
+	//newsCover
+	.newsListCover {
+		@include float(left);
+		width:200px;
+		height:150px;
+		overflow:hidden;
+	}
+
+	//newsDescription
+	.newsListDes {
+		@include float(right);
+		width:475px;
+		height: 150px;
+
+		& > a {
+			margin-top: 5px;
+			display: block;
+			width:470px;
+			height:auto;
+			padding:0 5px 0 0;
+
+			color:#000;
+			letter-spacing: 0.5px;
+			text-decoration: none;
+
+			&.title {
+				@include fontSize($defFont + 4);
+				line-height:24px;
+			}
+
+			&.texts {
+				@include fontSize($defFont);
+				line-height: 20px;
+			}
+		}
+
+		//keywords
+		& > .keywords {
+			@include float(right);
+			@include fontSize($defFont);
+
+			display: inline-block;
+			padding-right:5px;
+
+			ul > li { 
+				padding:0 2px;
+				@include float(left);
+				line-height: 30px;
+				letter-spacing: 1px;
+			}
+
+			ul > li > a {
+				display: inline-block;
+				color:$orange;
+				text-decoration: none;
+
+				&:before {
+					display: inline-block;
+					content:",";
+				}
+			}
+
+			ul > li:first-child + li > a:before {
+				display: none;
+			}
+
+		}
+
+	}
+}
