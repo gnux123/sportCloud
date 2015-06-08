@@ -1,0 +1,79 @@
+table.recordTable {
+	display: block;
+	width:100%;
+	height:auto;
+
+	background: #fff;
+
+	tr { width:100%; }
+
+	tr td {
+		width:76px;
+		border:1px solid $gray-l;
+		
+		@include fontSize($defFont + 2);
+		text-align: center;
+		letter-spacing: 1px;
+
+	}
+
+	tr:first-child {
+		background: $gray-l;
+
+	
+		td {  
+			padding:8px 0;
+		}
+	}
+
+	tr:first-child + tr,
+	tr:first-child + tr + tr {
+		td {
+			height:40px;
+			line-height: 40px;
+		}
+	}
+
+}
+
+
+table.recordTable.recordLive {
+	tr {
+		width:100%;
+	
+		&:first-child td {
+			height:25px;
+			line-height: 25px;
+
+			&:first-child + td { text-align: center; }
+		}
+
+		&:first-child + tr td,
+		&:first-child + tr + tr td {
+			height:20px;
+			line-height: 20px;			
+		}
+	}
+
+
+	tr td {
+		height:20px;
+		line-height: 20px;
+		padding:5px 0;
+
+		@include fontSize($defFont);
+
+		&:first-child,
+		&:first-child + td + td { width:100px; }
+	
+		&:first-child + td { 
+			width:471px; 
+			padding:5px; 
+
+			text-align: left;
+		}
+	
+		& > span:first-child { color:red; }
+		& > span:first-child + span { color:green; }
+	}
+}
