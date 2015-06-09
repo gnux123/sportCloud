@@ -31,3 +31,5 @@ $(function(){
 		$(".scoresCotent > div").eq(_index).show();
 	});
 });
+
+
