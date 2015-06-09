@@ -1,0 +1,107 @@
+.main > div.programContent {
+	
+	& > div {
+		margin-top:20px;
+		&:first-child { margin-top:0; }
+	}
+
+	h2 { 
+		@include fontSize($defFont + 12);
+		color:#fff;
+		letter-spacing: 1px;
+	}
+	
+
+	& > .gamesDate {
+		margin-bottom: 60px;
+	}
+	
+	& > .scores {
+		.scoreNav {
+			display: block;
+			width: 100%;
+			height: 34px;
+			background: $blue-l; 
+			border-bottom:1px solid $blue;
+			overflow: hidden;
+			
+			margin-bottom: 20px;
+		}
+
+		.scoreNav > ul {
+			display:block;
+			width:100%;
+			height:34px;
+			padding-left: 10px;
+
+			@include pie-clearfix;
+
+			& > li {
+				@include float(left);
+				display: block;
+				width:65px;
+				height:100%;
+
+				&.active a { background: $blue; }
+			}
+
+			& > li a {
+				display: block;
+				width:100%;
+				height:100%;
+
+				@include fontSize($defFont + 2);
+				line-height: 34px;
+				letter-spacing: 1px;
+				text-decoration: none;
+				text-align: center;
+				color:#fff;
+			}
+
+		}
+
+		.scoresCotent > div {
+			display: none;
+			width:100%;
+			height:auto;
+
+			&:first-child { display: block; }
+		}
+	}
+
+	//nbContent
+	.nbaScores h3 {
+		display: block;
+		width:100%;
+		height:30px;
+
+		@include fontSize($defFont + 2);
+		letter-spacing: 1px;
+		line-height: 30px;
+		color:#fff;
+	}
+
+	
+	.nbaScores > ul {
+		display: block;
+		width:100%;
+		height:auto;
+
+		margin-bottom:20px;
+
+		@include pie-clearfix;
+
+		& > li {
+			@include float(left);
+			display: block;
+			width: 220px;
+			height: auto;
+			margin-left:12.5px;
+
+			&:first-child { margin-left:0; }
+			
+		}
+
+	}
+
+}

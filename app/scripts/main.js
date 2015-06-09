@@ -16,4 +16,18 @@ $(function(){
 		}
 
 	});
+
+
+	//scores content tabs effect
+	var _ul = $(".scoreNav > ul > li");
+
+	_ul.eq(0).addClass("active");
+
+	_ul.click(function(){
+		var _index = $(this).index();
+		$(this).addClass("active").siblings(".active").removeClass("active");
+
+		$(".scoresCotent > div").hide();
+		$(".scoresCotent > div").eq(_index).show();
+	});
 });

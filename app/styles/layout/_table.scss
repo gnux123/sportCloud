@@ -77,3 +77,61 @@ table.recordTable.recordLive {
 		& > span:first-child + span { color:green; }
 	}
 }
+
+
+
+table.recordTable.gamesDateTable {
+	tr {
+		width:100%;
+
+		td,
+		&:first-child td,
+		&:first-child + tr td,
+		&:first-child + tr + tr td {
+			height:25px;
+			line-height: 25px;
+			padding:5px 0;
+
+			@include fontSize($defFont);
+		}
+
+	}
+	
+	tr td {
+		&:first-child { width:110px; }
+		&:first-child + td { width:60px; }
+		&:first-child + td + td { width:80px; }
+		&:first-child + td + td + td { width:177px; }
+		&:first-child + td + td + td + td { width:80px; }
+		&:first-child + td + td + td + td + td { 
+			width:178px; 
+			& > a { color:$blue; }
+		}
+	}
+}
+
+
+table.recordTable.nbaScoreTable {
+	tr {
+		width:100%;
+
+		td {
+			height:25px;
+			line-height: 25px;
+			padding:3px 0;
+
+			@include fontSize($defFont - 1);
+
+			&:first-child { width:40px; }
+			&:first-child + td,
+			&:first-child + td + td,
+			&:first-child + td + td + td { width:58.3px; }
+		}
+	}	
+}
+
+table.recordTable.teamScoreTable {
+	td td {
+		width:67.4px;
+	}
+}
