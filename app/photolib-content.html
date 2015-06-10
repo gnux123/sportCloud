@@ -31,10 +31,20 @@
     <![endif]-->
 
   </head>
-  <body style="background:url(images/main_bg.jpg) #000 top center no-repeat;"  >
+  <body>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.3&appId=167539819976669";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    
     <div class="container">
 
       include "layout/_header.html"
@@ -43,9 +53,7 @@
         <div class="main">
           include "layout/_breads.html"
           
-          <div class="photolibContent">
-            <h2>NBA精彩賽事</h2>
-          </div>
+          include "layout/_photolibContent.html"
         </div>
         <div class="sub">
           include "layout/_side.html"

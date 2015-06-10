@@ -30,6 +30,14 @@ $(function(){
 		$(".scoresCotent > div").hide();
 		$(".scoresCotent > div").eq(_index).show();
 	});
+
+
+	$('.single-item').slick({
+		dots: true,
+		customPaging: function(slider, i) { 
+			return '<button class="img-tab"><img src="images/thumbnails-' + (i+1) + '.jpg"></button>';
+		}
+	});
 });
 
 
