@@ -1,0 +1,16 @@
+.main > div.photolibMain {
+	@extend %videoGroup;
+	
+	//custom page design
+	height:auto;
+	margin-top:0;
+	margin-bottom: 12.5px;
+
+	& > ul > li {
+		margin-top:12.5px;
+
+		&:nth-child(3n+1) {
+			margin-left:0;
+		}
+	}
+}
