@@ -45,25 +45,6 @@ div.main, div.sub {
 		width:445px;
 		height:310px;
 		overflow: hidden;
-
-		& > div {
-			position: absolute;
-			top:0;
-			left:0;
-
-			width:1000em;
-			height:100%;
-			@include pie-clearfix;
-
-			a {
-				@include float(left);
-
-				display: block;
-				width:445px;
-				height:100%;
-			}
-		}
-
 	}
 
 
