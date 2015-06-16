@@ -67,6 +67,40 @@ $(function(){
 		
 	});
 
+
+	//filter slides
+	var videoSlider = $(".videoShowRoom");
+
+	videoSlider.slick({
+		dots: true,
+		arrows: false,
+		speed: 180,
+        fade: true,
+        cssEase: 'linear',
+        customPaging: function(slides, i) {
+        	var text = videoSlider.find(".slick-slide").eq(i).find("h3").text();
+        	var getURL = videoSlider.find(".slick-slide").eq(i).find("iframe").attr("src"),
+        		videoCode = getURL.split("/").pop();
+
+			return '<button class="video-tab">\
+			<img src="http://i.ytimg.com/vi/'+ videoCode + '/0.jpg" width="100%"><p>' + text + '</p></button>';
+		}
+
+	});
+
+
+	$("#videoSelect").change(function(){
+		var _val = $('#videoSelect :selected').val();
+
+		if (_val === 'all') {
+			videoSlider.slick('slickUnfilter');
+		} else if (_val === 'hot') {
+			videoSlider.slick('slickFilter','.hot');
+		} else if (_val === 'live') {
+			videoSlider.slick('slickFilter','.live');
+		}
+	});
+
 });
 
 
