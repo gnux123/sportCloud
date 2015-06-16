@@ -8,7 +8,7 @@ $(function(){
 			   .siblings("li.active")
 			   .removeClass("active");
 
-		if(_index == 6 || _index == 8) {
+		if(_index === 6 || _index === 8) {
 			$(".subNavs").hide();
 		}else{
 			$(".subNavs").show();
@@ -78,8 +78,9 @@ $(function(){
         fade: true,
         cssEase: 'linear',
         customPaging: function(slides, i) {
-        	var text = videoSlider.find(".slick-slide").eq(i).find("h3").text();
-        	var getURL = videoSlider.find(".slick-slide").eq(i).find("iframe").attr("src"),
+        	var targetShow = videoSlider.find(".slick-slide").eq(i);
+        	var text = targetShow.find("h3").text();
+        	var getURL = targetShow.find("iframe").attr("src"),
         		videoCode = getURL.split("/").pop();
 
 			return '<button class="video-tab">\
