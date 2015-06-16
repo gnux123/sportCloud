@@ -1,0 +1,173 @@
+div.todayGames,
+div.nearTermGames {
+	& > div.title {
+		@extend %titleStyle;
+		&:before { display: none; }
+
+		width:680px;
+		padding-left: 5px;
+		background: $blue; 
+		
+		@include fontSize($defFont + 2);
+		font-style: normal;
+		line-height: 31px;
+		letter-spacing: 1px;
+	}
+
+	& > div.title + div {
+		width:100%;
+		height: auto;
+	}
+
+	& > div.title + div > ul li {
+		margin-top:15px;
+		width:100%;
+		height:auto;
+		background: #fff;
+	}
+}
+
+//todayGames Module
+div.todayGames {
+	& > div.title + div > ul li a {
+		position: relative;
+		display: block;
+		width:100%;
+		text-decoration: none;
+		@include pie-clearfix;
+
+		& > div { @include float(left); }
+	}
+
+	& > .todayGamesContent > ul li a {
+		height:100px;
+		
+		& > div {
+			height:100px;
+
+			letter-spacing: 1px;
+			line-height: 100px;
+			text-align: center;
+		}
+	}
+
+
+	//component 
+	.gameCatesName {
+		width:14.6%;
+		background: $blue;
+		
+		@include fontSize($defFont + 11);
+		color:#fff;
+	}
+
+	.gamesTeam {
+		width:31.9%;
+		border-right:1px solid $gray-l;
+
+		@include fontSize($defFont + 6);
+		color:#000;
+
+		& > .home { margin-right:10px; }
+		& > .away { margin-left:10px; }
+	}
+
+	.timesAndarea {
+		width: 53.3%;
+
+		@include fontSize($defFont + 10);
+		color:#000;
+
+		& > .area { margin-left:15px; }
+	}
+}
+
+
+//nearTermGames Module
+div.nearTermGames {
+	margin-top:30px;
+
+	& > div.title + div > ul > li {
+		display: block;
+		width:100%;
+		height:150px;
+		background: #fff;
+		@include pie-clearfix;
+	}
+
+	& > div.title + div > ul > li > div {
+		@include float(left);
+	}
+
+	.datesAndArea {
+		position: relative;
+		width:17.4%;
+		height:100%;
+		border-right:1px solid $gray;
+
+		& > span {
+			position: absolute;
+			left:0;
+			display: block;
+			width:100%;
+			text-align: center;
+			letter-spacing: 1px;
+		}
+
+		& > span.dates { 
+			top:25px;
+			height:100px; 
+
+			line-height:35px;
+			@include fontSize($defFont + 7);
+			color:$blue-l;
+		}
+
+		& > span.area {
+			bottom:0;
+			height:40px; 
+			background: $blue-d;
+
+			line-height: 40px;
+			@include fontSize($defFont + 4);
+			color:#fff;
+
+		}
+	}
+
+	.info {
+		width:82.4%;
+		overflow: hidden;
+
+		@include pie-clearfix;
+
+		& > h3 {
+			display: inline-block;
+			padding:0 10px;
+
+			@include fontSize($defFont + 7);
+			font-weight: bold;
+			letter-spacing: 1px;
+			line-height: 50px;
+		}
+
+		& > p {
+			padding:0 10px;
+			@include fontSize($defFont);
+			letter-spacing: 1px;
+			line-height: 24px;
+		}
+
+		& > a.links {
+			@include float(left);
+			display: inline-block;
+			margin-top: 15px;
+			margin-left: 10px;
+
+			@include fontSize($defFont);
+			color:$gray;
+			text-decoration: none;
+			letter-spacing: 1px;
+		}
+	}
+}

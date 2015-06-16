@@ -47,7 +47,6 @@ $(function(){
 
 	var _navs = $(".slideNavs > ul");
 
-	console.log(_length);
 	for(i=0; i<_length; i++) {
 		var subText = slider.find("div").eq(i).find("a img").attr("alt");
 		slider.find("div").eq(i).find("a").before(i+1);
@@ -55,7 +54,7 @@ $(function(){
 		_navs.append("<li class='test"+i+"'><a href='#'>"+subText+"</a></li>");
 	} 
 
-	$(".slideNewsMain").slick({
+	slider.slick({
 		dots: false,
         speed: 180,
         fade: true,
