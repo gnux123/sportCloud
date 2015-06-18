@@ -61,8 +61,10 @@
 	}
 }
 
+//
+.main div.specialGroup {
+	margin-bottom:15px;
 
-.main > div.specialGroup {
 	.sgTitle {
 		@extend %titleStyle;
 		width:675px;

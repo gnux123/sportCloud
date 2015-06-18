@@ -1,0 +1,19 @@
+.slideNews.multiActiveNews {
+	margin-bottom: 15px;
+
+	.slick-slide {
+		height:310px;
+		overflow: hidden;
+	}
+
+	.slideNavs > ul > li,
+	.slideNavs > ul > li a {
+		height:61.2px;
+	}
+
+	.slideNavs > ul > li a {
+		//background: $blue-l;
+		@include backgroundTrans($blue, 0.4);
+		line-height: 30px;
+	}
+}
