@@ -1,11 +1,11 @@
-.main > div.newsLists {
+.main > div.profilesContent {
 	h2 { 
 		@include fontSize($defFont + 12);
 		color:#fff;
 		letter-spacing: 1px;
-	}
-}
 
-.newsListsContent {
+		margin-bottom:20px;
+	}
+
 	@extend %lists;
 }
