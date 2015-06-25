@@ -1,8 +1,10 @@
 %titleStyle {
 	position: relative;
 	width: 100%;
-	height:30px;
+	height: 30px;
 	overflow: hidden;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 
 	@include fontSize($defFont + 4);
 	color:#fff;

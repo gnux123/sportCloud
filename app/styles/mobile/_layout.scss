@@ -1,0 +1,55 @@
+@keyframes moveSide {
+	100% {
+		transform: translate3d(-81.25%,0,0); 
+	}
+}
+
+@include susy-breakpoint($break-mobile,$mobile) {
+	.mobileWrap > div {
+		position: relative;
+	}
+
+	.mobileWrap.side { 
+		animation: moveSide .2s linear;
+		animation-fill-mode: forwards;
+	}
+
+	.mobileWrap {
+		transform: translate3d(0,0,0);
+		position: absolute;
+		z-index:2;
+		top:0;
+		width:100%;
+		height:auto;
+	}
+
+	.header,
+	.toolbars {
+		position: fixed;
+		z-index: 3;
+	} 
+
+	.views {
+		width: 100%;
+		overflow-x: hidden;
+		overflow-y: scroll;
+
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.sideBar {
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		padding-left:18.75%;
+		box-sizing: border-box;
+	
+		& > .sideContent {
+			width:100%;
+			height:100%;
+			background: #ececec;
+		}
+	}
+
+
+}

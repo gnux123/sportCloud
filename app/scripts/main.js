@@ -102,6 +102,44 @@ $(function(){
 		}
 	});
 
+
+	$(".slideShows").slick({
+		dots: true,
+	});
+
+	var _views = $(".views"),
+		_mobile = $(".mobileWrap"),
+		_header = $(".header"),
+		_tools = $(".toolbars");
+
+
+	var nowFrameHeight = window.innerHeight,
+		orgHeight = $(window).height(),
+		topH = _header.height(),
+		toolsH = _tools.height();
+
+	if(nowFrameHeight === 460) {
+		_views.height(orgHeight - topH - toolsH);
+	}else if(nowFrameHeight === 529) {
+		_views.height(orgHeight - topH - toolsH + 69);
+	}
+
+
+	
+
+
+	$(".sideBtn").click(function(){
+		var sideCheck = _mobile.attr("class").split(" ")[1];
+		if (sideCheck === "side") {
+			_mobile.removeClass("side");
+		}else if(sideCheck === undefined) {
+			_mobile.addClass("side");
+		}
+		
+	});		
+
+
+
 });
 
 
