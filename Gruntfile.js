@@ -179,8 +179,8 @@ module.exports = function (grunt) {
     // Compiles Sass to CSS and generates necessary files if requested
     sass: {
       options: {
-        sourceMap: true,
-        sourceComments: true,
+        sourceMap: false,
+        sourceComments: false,
         includePaths: ['bower_components','./node_modules/susy/sass','./node_modules/compass-mixins/lib']
         },
       dist: {
@@ -188,7 +188,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '<%= config.app %>/styles',
           src: ['*.{scss,sass}'],
-          dest: '.tmp/styles',
+          dest: '<%= config.dist %>/styles',
           ext: '.css'
         }]
       },
@@ -395,7 +395,7 @@ module.exports = function (grunt) {
         'copy:styles'
       ],
       dist: [
-        'sass',
+        'sass:dist',
         'copy:styles',
         'imagemin',
         'svgmin'
@@ -453,14 +453,14 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'autoprefixer',
     'concat',
-    'cssmin',
+    //'cssmin',
     'uglify',
     'copy:dist',
     'includes:build',
     'modernizr',
-    'rev',
-    'usemin',
-    'htmlmin'
+    //'rev',
+    'usemin'
+    //'htmlmin'
   ]);
 
   grunt.registerTask('default', [
