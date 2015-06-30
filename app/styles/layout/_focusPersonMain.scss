@@ -1,0 +1,74 @@
+.focusPersonMain {
+  width:100%;
+  height:auto;
+
+  & > ul > li {
+    margin-top: 20px;
+
+    &:first-child { margin-top: 0; }
+  }
+
+  .personGroup {
+    width:100%;
+    height:336px;
+    @include pie-clearfix;
+
+    &.pgLeft {
+      & > .topPerson { @include float(left); }
+      & > .otherPerson { @include float(right); }
+    }
+
+    &.pgRight {
+      & > .topPerson { @include float(right); }
+      & > .otherPerson { @include float(left); }
+    }
+  }
+
+  .personGroup > .topPerson,
+  .personGroup > .otherPerson {
+    width:49%;
+    height:100%;
+    overflow: hidden;
+
+    a {
+      display:block;
+      width:100%;
+      height:100%;
+      overflow: hidden;
+    }
+
+    a > img {
+      width: 100%;
+    }
+  }
+
+  .personGroup > .otherPerson > ul {
+    display: block;
+    width: 100%;
+    height: 100%;
+    @include pie-clearfix;
+  }
+  .personGroup > .otherPerson > ul > li {
+    @include float(left);
+    margin-left: 4%;
+    margin-top: 4%;
+    display: block;
+    width: 48%;
+    height: 48%;
+    overflow: hidden;
+
+    &:first-child,
+    &:first-child + li + li {
+      margin-left:0;
+    }
+
+    &:first-child,
+    &:first-child + li  {
+      margin-top:0;
+    }
+
+  }
+
+
+
+}
