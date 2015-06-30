@@ -78,7 +78,7 @@
 
 		&:first-child,
 		&:first-child + li,
-		&:first-child + li + li { margin-top: 0; } 
+		&:first-child + li + li { margin-top: 0; }
 
 		& > a {
 			display: block;
@@ -131,7 +131,7 @@
 		@include pie-clearfix;
 	}
 
-	
+
 	//newsCover
 	.newsListCover {
 		@include float(left);
@@ -176,7 +176,7 @@
 			display: inline-block;
 			padding-right:5px;
 
-			ul > li { 
+			ul > li {
 				padding:0 2px;
 				@include float(left);
 				line-height: 30px;
@@ -200,5 +200,34 @@
 
 		}
 
+	}
+}
+
+//messages board
+%messageBoard {
+	margin-top:50px;
+	width:100%;
+	height:auto;
+	background: #fff;
+	padding-bottom:10px;
+
+	& > h3.title {
+		display: block;
+		width:680px;
+		height:35px;
+		padding-left:5px;
+		background: $blue-l;
+
+		@include fontSize($defFont + 4);
+		line-height: 35px;
+		letter-spacing: 1px;
+		color:#fff;
+	}
+
+	& > .MessageMain {
+		display: block;
+		width:665px;
+		height:auto;
+		margin:10px 10px 0 10px;
 	}
 }

@@ -4,7 +4,7 @@
 		width:100%;
 		height: 130px;
 		background: #fff;
-	
+
 		& > ul {
 			display: block;
 			width:100%;
@@ -88,7 +88,7 @@
 					content: "：";
 					height:130px;
 					margin-left:74%;
-					
+
 					@include fontSize($defFont + 26);
 					font-family: arial;
 					line-height: 130px;
@@ -123,7 +123,7 @@
 			color:#fff;
 			letter-spacing: 1px;
 			font-weight:100;
-				
+
 			&:before {
 				position: absolute;
 				left:0;
@@ -154,7 +154,7 @@
 		padding:20px 0;
 
 		background: $gray-l;
-		
+
 		& > ul > li {
 			margin:0 5px;
 
@@ -173,60 +173,8 @@
 
 
 
-	//recordZoneNews
-	.recordZoneNews {
-		margin-top:20px;
-
-		display: block;
-		width:100%;
-		height:auto;
-
-		& > .title {
-			@extend %titleStyle;
-			&:before { display: none; }
-
-			width:680px;
-			padding-left: 5px;
-
-			background: $blue;
-		
-		}
-	
-		& > .rznContent {
-			margin-top: 10px;
-			display: block;
-			width:100%;
-			height:auto;
-
-			background: $gray-l;
-		}
-
-		& > .rznContent > ul {
-			display: block;
-			width:100%;
-			height: auto;
-
-			@include pie-clearfix;
-		}
-
-		& > .rznContent > ul li {
-			display: block;
-			line-height: 35px;
-			border-top:1px solid #fff;
-
-			&:first-child { border-top:0; }
-
-			& > a {
-				padding-left:10px;
-
-				@include fontSize($defFont);
-				color:#000;
-				text-decoration: none;
-				letter-spacing: 1px;
-
-			}
-		}
-
+	//recordMessageBoard
+	.recordMessage {
+		@extend %messageBoard;
 	}
 }
-
