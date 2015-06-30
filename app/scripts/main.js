@@ -34,7 +34,7 @@ $(function(){
 
 	$('.photolibCover').slick({
 		dots: true,
-		customPaging: function(slider, i) { 
+		customPaging: function(slider, i) {
 			return '<button class="img-tab"><img src="images/thumbnails-' + (i+1) + '.jpg"></button>';
 		}
 	});
@@ -52,7 +52,7 @@ $(function(){
 		//slider.find("div").eq(i).find("a").before(i+1);
 		// console.log(subText);
 		_navs.append("<li class='test"+i+"'><a href='#'>"+subText+"</a></li>");
-	} 
+	}
 
 	slider.slick({
 		dots: false,
@@ -64,7 +64,7 @@ $(function(){
 	$(".slideNavs > ul li").hover(function(){
 		var slideIndex = $(this).index();
 		slider.slick('slickGoTo', slideIndex, false);
-		
+
 	});
 
 
@@ -102,6 +102,18 @@ $(function(){
 		}
 	});
 
+
+	//focusPesrson select
+	$(".fpNavs li").click(function(){
+		var fpIndex = $(this).index();
+		$(this).addClass("active").siblings(".active").removeClass("active");
+		$(".fpZones").eq(fpIndex).show().siblings(".fpZones").hide();
+	});
+
+	$(".fpZones > ul > li a").hover(function(){
+		var _parent = $(this).parent("li");
+		_parent.addClass("current").siblings("li.current").removeClass("current");
+	});
+
+
 });
-
-
