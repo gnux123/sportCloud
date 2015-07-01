@@ -67,6 +67,20 @@
         text-decoration: none;
       }
 
+      a.moreLinks {
+        display: block;
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+
+        @include fontSize($defFont + 1);        
+        color: #fff;
+        line-height: 30px;
+        letter-spacing: 1px;
+        text-decoration: none;
+
+      }
+
     }
   }
 
