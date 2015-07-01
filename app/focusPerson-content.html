@@ -1,0 +1,155 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>sportCloud</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css(.tmp) styles/vendor.css -->
+    <link rel="stylesheet" href="styles/vendor.css">
+    <!-- endbuild -->
+
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+
+
+    <!--[if lt IE 9]>
+      <!-- build:js scripts/lt-ie-9.js -->
+      <script type="text/javascript" src="bower_components/lt-ie-9/lt-ie-9.min.js"></script>
+      <!-- endbuild -->
+      <noscript><link rel="stylesheet" href="[fallback css]"></noscript>
+    <![endif]-->
+
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.3&appId=167539819976669";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div class="container">
+
+      include "layout/_header.html"
+
+      <div class="contents">
+        <div class="main">
+          include "layout/_breads.html"
+
+          <div class="focusPersonContent">
+            <h2>陳偉殷</h2>
+            <div class="personInfo">
+              <div class="personImg">
+                <img src="images/focusPersonContent_img.jpg" alt="">
+              </div>
+
+              <div class="personIntro">
+                <div class="title">
+                  <h3>個人介紹</h3>
+                </div>
+                <div class="wrap">
+                  陳偉殷畢業於國立體育大學，曾經效力於日職中日龍隊，於2009年拿下日本職棒中央聯盟防禦率王。
+                  現效力於美職巴爾的摩金鶯隊[1][2]，擔任先發投手。
+                </div>
+
+              </div>
+
+              <div class="personNews">
+                <div class="title">
+                  <h3>相關新聞</h3>
+                </div>
+                <div class="wrap">
+                  <ul>
+                    <li><a href="#">誰是狀元？ET網友預測暫看好蔣智賢01</a></li>
+                    <li><a href="#">誰是狀元？ET網友預測暫看好蔣智賢02</a></li>
+                    <li><a href="#">誰是狀元？ET網友預測暫看好蔣智賢03</a></li>
+                    <li><a href="#">誰是狀元？ET網友預測暫看好蔣智賢04</a></li>
+                    <li><a href="#">誰是狀元？ET網友預測暫看好蔣智賢05</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="personComments">
+                <div class="title">
+                  <h3>網友留言</h3>
+                </div>
+                <div class="wrap">
+                  <div class="fb-comments" data-href="http://developers.facebook.com/docs/plugins/comments/" data-width="100%" data-numposts="5"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="personEvents">
+              <h3>生涯傑出表現</h3>
+              <ul class="peTree">
+                <li>
+                  <div class="peDesc">
+                    <span class="date">2015/04/02</span>
+                    <p>首次登板對橫濱灣星3回戰（名古屋巨蛋）、6局上救援登板、2回5失分</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="peDesc">
+                    <span class="date">2015/04/02</span>
+                    <p>首次登板對橫濱灣星3回戰</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="peDesc">
+                    <span class="date">2015/04/02</span>
+                    <p>首次登板對橫濱灣星3回戰（名古屋巨蛋）、6局上救援登板、2回5失分</p>
+                  </div>                  
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="sub">
+          include "layout/_side.html"
+        </div>
+      </div>
+    </div>
+
+    include "layout/_footer.html"
+
+
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
