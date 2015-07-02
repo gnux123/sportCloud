@@ -1,5 +1,13 @@
 $(function(){
 
+	//header gameLists
+	$(".gamesShowWrap").slick({
+		dots: false,
+		lazyLoad: 'ondemand',
+  	slidesToShow: 6,
+  	slidesToScroll: 1
+	});
+
 	$(".cates > li a").hover(function(){
 		var _index = $(this).parent("li").index();
 
@@ -56,9 +64,9 @@ $(function(){
 
 	slider.slick({
 		dots: false,
-        speed: 180,
-        fade: true,
-        cssEase: 'linear'
+    speed: 180,
+    fade: true,
+    cssEase: 'linear'
 	});
 
 	$(".slideNavs > ul li").hover(function(){
