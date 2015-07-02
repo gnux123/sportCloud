@@ -48,31 +48,36 @@ $(function(){
 		}
 	});
 
-	//slideNewsMain
-	var slider = $(".slideNewsMain"),
-			_sliderHtml = slider.html(),
-			_width = slider.width(),
-			_length = slider.find("div").length;
+	//slideNews Function
+	$.fn.slideNews = function() {
+			var slider = this,
+					_sliderHtml = slider.html(),
+					_width = slider.width(),
+					_length = slider.find("div").length;
 
-	slider.html("<div class='slideContent'>"+ _sliderHtml +"</div>");
-	slider.after("<div class='slideNavs'><ul></ul></div>");
+			slider.html("<div class='slideContent'>"+ _sliderHtml +"</div>");
+			slider.after("<div class='slideNavs'><ul></ul></div>");
 
-	var _navs = $(".slideNavs > ul");
+			var _navs = $(".slideNavs > ul");
 
-	for(i=0; i<_length; i++) {
-		var thisParent = slider.find(".slideContent").children("div");
-		var subText = thisParent.eq(i).find("a img").attr("alt"),
-				link = thisParent.eq(i).find("a").attr("href");
+			for(i=0; i<_length; i++) {
+				var thisParent = slider.find(".slideContent").children("div");
+				var subText = thisParent.eq(i).find("a img").attr("alt"),
+						link = thisParent.eq(i).find("a").attr("href");
 
-		_navs.append("<li class='slidenav-"+i+"'><a href='"+ link +"'>"+subText+"</a></li>");
+				_navs.append("<li class='slidenav-"+i+"'><a href='"+ link +"'>"+subText+"</a></li>");
+			}
+
+			_navs.children("li").eq(0).addClass("active");
+			_navs.children("li").hover(function(){
+				var slideIndex = $(this).index();
+				slider.find(".slideContent").css("-webkit-transform","translate3d(-"+ slideIndex*_width +"px,0,0)");
+				$(this).addClass("active").siblings("li.active").removeClass("active");
+			});
 	}
 
-	_navs.children("li").eq(0).addClass("active");
-	_navs.children("li").hover(function(){
-		var slideIndex = $(this).index();
-		slider.find(".slideContent").css("-webkit-transform","translate3d(-"+ slideIndex*_width +"px,0,0)");
-		$(this).addClass("active").siblings("li.active").removeClass("active");
-	});
+	$(".slideNewsMain").slideNews();
+
 
 
 	//filter slides
