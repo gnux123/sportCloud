@@ -22,13 +22,9 @@
 //main and sub
 div.main, div.sub {
 	& > div {
-		margin-top:20px;
+		margin-bottom:20px;
 		width: 100%;
 		height:auto;
-
-		&:first-child {
-			margin-top:0;
-		}
 	}
 }
 
@@ -83,7 +79,7 @@ div.main, div.sub {
 				height:37px;
 				margin-top:1px;
 				padding-left: 10px;
-				
+
 				color:#fff;
 				line-height: 37px;
 				text-decoration: none;

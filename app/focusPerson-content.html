@@ -5,7 +5,9 @@
     <title>sportCloud</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-task" content="name=ETtoday 新聞雲;action-uri=http://www.ettoday.net/;icon-uri=http://cache.ettoday.net/web_2011/images/favicon_desktop.ico" />
+    <meta name="msapplication-task" content="name=《ETtoday 新聞雲》Facebook粉絲團;action-uri=https://www.facebook.com/ETtoday;icon-uri=http://cache.ettoday.net/web_2011/images/favicon_desktop.ico" />
+    <meta name="msapplication-task" content="name=《ETtoday 新聞雲》Google+;action-uri=https://plus.google.com/u/0/+ettoday/posts;icon-uri=http://cache.ettoday.net/web_2011/images/favicon_desktop.ico" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css(.tmp) styles/vendor.css -->
@@ -17,11 +19,16 @@
     <!-- endbuild -->
 
 
-    <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="http://cache.ettoday.net/jquery/jquery.min-1.8.3.js"></script>
+    <script type="text/javascript" src="http://cache.ettoday.net/jquery/jquery.cookie.js"></script>
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
     <!-- endbuild -->
 
-
+    <script src="scripts/common.js"></script>
+    <script src="scripts/main.js"></script>
 
     <!--[if lt IE 9]>
       <!-- build:js(.) scripts/lt-ie-9.js -->
@@ -31,7 +38,7 @@
     <![endif]-->
 
   </head>
-  <body>
+  <body id="sport">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -49,7 +56,7 @@
       include "layout/_header.html"
 
       <div class="contents">
-        <div class="main">
+        <div class="main r1">
           include "layout/_breads.html"
 
           include "layout/_focusPersonContent.html"
@@ -61,29 +68,5 @@
     </div>
 
     include "layout/_footer.html"
-
-
-
-
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
-
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
 </body>
 </html>

@@ -352,6 +352,7 @@ module.exports = function (grunt) {
             'images/{,*/}*.webp',
             '{,*/}*.html',
             'styles/fonts/{,*/}*.*',
+            'scripts/{main,common}.js',
             '!**/layout/**' //ignore folder
           ]
         }, {
@@ -376,8 +377,8 @@ module.exports = function (grunt) {
         outputFile: '<%= config.dist %>/scripts/vendor/modernizr.js',
         files: {
           src: [
-            '<%= config.dist %>/scripts/{,*/}*.js',
-            '<%= config.dist %>/styles/{,*/}*.css',
+            '!<%= config.dist %>/scripts/{,*/}*.js',
+            '!<%= config.dist %>/styles/{,*/}*.css',
             '!<%= config.dist %>/scripts/vendor/*'
           ]
         },
@@ -457,7 +458,7 @@ module.exports = function (grunt) {
     'uglify',
     'copy:dist',
     'includes:build',
-    'modernizr',
+    //'modernizr',
     //'rev',
     'usemin'
     //'htmlmin'
