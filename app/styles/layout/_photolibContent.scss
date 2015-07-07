@@ -99,11 +99,13 @@
 				height:auto;
 			}
 
-			& > .relatedNewsLink h3 {
+			& > .relatedNewsLink a {
+				margin-bottom: 10px;
+
 				@include fontSize($defFont);
 				color:#fff;
 				letter-spacing: 1px;
-				margin-bottom: 10px;
+				text-decoration: none;
 			}
 		}
 	}
