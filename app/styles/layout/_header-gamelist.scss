@@ -13,8 +13,8 @@
 		& > div {
 			height:42px;
 			select { height:42px; }
-			
-			&:first-child { 
+
+			&:first-child {
 				height:41px;
 				border-bottom: 1px solid $gray;
 				select { height: 41px; }
@@ -34,100 +34,41 @@
 				color:$gray;
 				@include fontSize($defFont);
 				letter-spacing: 2px;
-				
+
 
 				&.gamesSelect { padding-left: 40%; }
 				&.dateSelect { padding-left: 12%; }
-			
+
 			}
 		}
 
 
 	}
 
+	//game show
 	.gamesShow {
 		position: relative;
 		@include float(left);
 		width:829px;
 		height:100%;
 		border-left:1px solid $gray;
-
-		& > .prev,
-		& > .next {
-			position: absolute;
-			top:0;
-
-			display: block;
-			width:69px;
-			height:0;
-			padding-top: 85px;
-			overflow: hidden;
-
-			text-align: center;
-			line-height: 85px;
-
-			& > i {
-				position: absolute;
-				top:0;
-				left:0;
-
-				display: block;
-				width:100%;
-				height:100%;
-
-				text-align: center;
-				line-height: 81px;
-				color:$gray;
-			}
-		}
-
-		& > .prev {
-			left:0;
-			border-right:1px solid $gray;
-		}
-
-		& > .next {
-			right:0;
-			width:68px;
-			border-right:1px solid #000;
-			border-left:1px solid $gray;
-		}
 	}
 
 
 	.gamesShowWrap {
 		position: relative;
 		top:0;
-		left:70px;
+		left:70.5px;
 		width:689px;
 		height:100%;
-		overflow: hidden;
-	
-		& > div {
-			position: absolute;
-			top:0;
-			left:0;
-			width:1000em;
-			height:100%;
-		}
+		@include pie-clearfix;
 
-		& > div > ul > li {
+		a.slick-slide {
 			@include float(left);
-
 			display: block;
 			width:114px;
 			height:85px;
 			border-right:1px solid $gray;
-
-
-			&:last-child { border-right:0px; }
-		}
-
-
-		& > div > ul > li > a {
-			display: block;
-			width:100%;
-			height:100%;
 
 			color:$gray;
 			text-decoration: none;
@@ -136,16 +77,68 @@
 				background: $blue;
 				color:#fff;
 			}
+
+			&:last-child { border-right:0px; }
+		}
+
+		& > .slick-prev,
+		& > .slick-next {
+			position: absolute;
+			top:0;
+
+			display: block;
+			width:70.5px;
+			height:0;
+			padding-top: 85px;
+			margin-top: 0;
+			overflow: hidden;
+
+
+			&:before {
+				position: absolute;
+				top: 4px;
+				left:0;
+				display: block;
+				width:100%;
+				height:100%;
+
+				text-align: center;
+				color:$gray;
+
+
+				font-family: FontAwesome;
+				@include fontSize($defFont + 54);
+				line-height: 1;
+				color:$gray;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+		}
+
+		& > .slick-prev:before { content: "\f104"; }
+		[dir="rtl"] .slick-prev:before { content: "\f104"; }
+
+		& > .slick-next:before { content: "\f105"; }
+		[dir="rtl"] .slick-next:before { content: "\f105"; }
+
+		& > .slick-prev {
+			left: -70.5px;
+			border-right:1px solid $gray;
+		}
+
+		& > .slick-next {
+			right: -70.5px;
+			border-left:1px solid $gray;
 		}
 	}
 
-	.gamesShowWrap > div > ul > li > a {
-		& > span { 
-			display: block; 
+	.gamesShowWrap a.slick-slide {
+		& > span {
+			display: block;
 			width:100%;
 			height:auto;
 		}
-		
+
 		.gameDate {
 			text-align: center;
 			@include fontSize($defFont - 4);
@@ -155,7 +148,7 @@
 
 		.gameTeam {
 			position: relative;
-			
+
 			height:30px;
 			@include fontSize($defFont+2);
 			line-height: 30px;
@@ -164,13 +157,15 @@
 			& > i {
 				position: absolute;
 				top:0;
-				
+
 				&:first-child {
-					left:10px;
+					left:5px;
+					@include fontSize($defFont + 1);
 				}
-				
-				&:first-child + i {		
-					right:10px;
+
+				&:first-child + i {
+					right:5px;
+					letter-spacing: -0.4px;
 				}
 			}
 		}

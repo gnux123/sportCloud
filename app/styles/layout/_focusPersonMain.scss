@@ -1,0 +1,115 @@
+.focusPersonMain {
+  width:100%;
+  height:auto;
+
+  & > ul > li {
+    margin-top: 20px;
+
+    &:first-child { margin-top: 0; }
+  }
+
+  .personGroup {
+    width:100%;
+    height:336px;
+    @include pie-clearfix;
+
+    &.pgLeft {
+      & > .topPerson { @include float(left); }
+      & > .otherPerson { @include float(right); }
+    }
+
+    &.pgRight {
+      & > .topPerson { @include float(right); }
+      & > .otherPerson { @include float(left); }
+    }
+  }
+
+  .personGroup > .topPerson,
+  .personGroup > .otherPerson {
+    width:49%;
+    height:100%;
+    overflow: hidden;
+
+    a {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    a > img {
+      width: 100%;
+    }
+
+    a > span {
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+
+      @include backgroundTrans(#000000, 0.6);
+      box-sizing: border-box;
+
+
+
+      color: #fff;
+
+    }
+  }
+
+  .personGroup > .topPerson a > span {
+    height: 45px;
+    padding: 0 15px;
+
+    border-bottom: 5px solid $blue;
+
+    @include fontSize($defFont + 10);
+    line-height: 45px;
+    letter-spacing: 2px;
+  }
+
+  .personGroup > .otherPerson a > span {
+    height: 35px;
+    padding: 0 10px;
+
+    border-bottom: 5px solid $blue;
+
+    @include fontSize($defFont + 2);
+    line-height: 35px;
+    letter-spacing: 1.5px;
+  }
+
+
+  .personGroup > .otherPerson > ul {
+    display: block;
+    width: 100%;
+    height: 100%;
+    @include pie-clearfix;
+  }
+  .personGroup > .otherPerson > ul > li {
+    @include float(left);
+    margin-left: 4%;
+    margin-top: 4%;
+    display: block;
+    width: 48%;
+    height: 48%;
+    overflow: hidden;
+
+    &:first-child,
+    &:first-child + li + li {
+      margin-left:0;
+    }
+
+    &:first-child,
+    &:first-child + li  {
+      margin-top:0;
+    }
+
+  }
+
+
+
+}
