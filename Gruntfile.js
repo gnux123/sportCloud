@@ -459,11 +459,7 @@ module.exports = function (grunt) {
     'includes:build',
     'modernizr',
     //'rev',
-<<<<<<< Updated upstream
     'usemin'
-=======
-    'usemin',
->>>>>>> Stashed changes
     //'htmlmin'
   ]);
 
