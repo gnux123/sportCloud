@@ -28,7 +28,8 @@ $(function(){
 
 
 	//scores content tabs effect
-	var _ul = $(".scoreNav > ul > li");
+	var _ul = $(".scoreNav > ul > li"),
+			_scoreContent = $(".scoresContent div");
 
 	_ul.eq(0).addClass("active");
 
@@ -36,8 +37,8 @@ $(function(){
 		var _index = $(this).index();
 		$(this).addClass("active").siblings(".active").removeClass("active");
 
-		$(".scoresCotent > div").hide();
-		$(".scoresCotent > div").eq(_index).show();
+		_scoreContent.hide();
+		_scoreContent.eq(_index).show();
 	});
 
 

@@ -1,4 +1,4 @@
-//games Table style
+/** 表格基礎樣式 **/
 table.recordTable {
 	display: block;
 	width:100%;
@@ -11,7 +11,7 @@ table.recordTable {
 	tr td {
 		width:76px;
 		border:1px solid $gray-l;
-		
+
 		@include fontSize($defFont + 2);
 		text-align: center;
 		letter-spacing: 1px;
@@ -21,8 +21,8 @@ table.recordTable {
 	tr:first-child {
 		background: $gray-l;
 
-	
-		td {  
+
+		td {
 			padding:8px 0;
 		}
 	}
@@ -38,10 +38,11 @@ table.recordTable {
 }
 
 
+/** 表格-賽事直播樣式 **/
 table.recordTable.recordLive {
 	tr {
 		width:100%;
-	
+
 		&:first-child td {
 			height:25px;
 			line-height: 25px;
@@ -52,7 +53,7 @@ table.recordTable.recordLive {
 		&:first-child + tr td,
 		&:first-child + tr + tr td {
 			height:20px;
-			line-height: 20px;			
+			line-height: 20px;
 		}
 	}
 
@@ -66,21 +67,21 @@ table.recordTable.recordLive {
 
 		&:first-child,
 		&:first-child + td + td { width:100px; }
-	
-		&:first-child + td { 
-			width:471px; 
-			padding:5px; 
+
+		&:first-child + td {
+			width:471px;
+			padding:5px;
 
 			text-align: left;
 		}
-	
+
 		& > span:first-child { color:red; }
 		& > span:first-child + span { color:green; }
 	}
 }
 
 
-
+/** 表格-賽事日期樣式 **/
 table.recordTable.gamesDateTable {
 	tr {
 		width:100%;
@@ -97,21 +98,21 @@ table.recordTable.gamesDateTable {
 		}
 
 	}
-	
+
 	tr td {
 		&:first-child { width:110px; }
 		&:first-child + td { width:60px; }
 		&:first-child + td + td { width:80px; }
 		&:first-child + td + td + td { width:177px; }
 		&:first-child + td + td + td + td { width:80px; }
-		&:first-child + td + td + td + td + td { 
-			width:178px; 
+		&:first-child + td + td + td + td + td {
+			width:178px;
 			& > a { color:$blue; }
 		}
 	}
 }
 
-
+/** 表格-NBA比分表格樣式I **/
 table.recordTable.nbaScoreTable {
 	tr {
 		width:100%;
@@ -128,9 +129,10 @@ table.recordTable.nbaScoreTable {
 			&:first-child + td + td,
 			&:first-child + td + td + td { width:58.3px; }
 		}
-	}	
+	}
 }
 
+/** 表格-NBA比分表格樣式II **/
 table.recordTable.teamScoreTable {
 	td td {
 		width:67.4px;

@@ -1,4 +1,4 @@
-//subIndex videos module
+/** 影音圖集首頁-影音撥放模組樣式 **/
 .main > div.subVideos {
 	width:100%;
 	height:400px;
@@ -8,7 +8,7 @@
 		@include float(left);
 		width:450px;
 		height:100%;
-	
+
 		& a {
 			color:#fff;
 			text-decoration: none;
@@ -61,7 +61,7 @@
 	}
 }
 
-//
+/** 影音圖集首頁-精彩圖集模組樣式 **/
 .main div.specialGroup {
 	margin-bottom:15px;
 
