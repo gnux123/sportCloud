@@ -1,11 +1,13 @@
+/** 新聞列表頁面 **/
 .main > div.newsLists {
-	h2 { 
+	h2 {
 		@include fontSize($defFont + 12);
 		color:#fff;
 		letter-spacing: 1px;
 	}
 }
 
+/** 新聞列表頁面-內容 **/
 .newsListsContent {
 	@extend %lists;
 }

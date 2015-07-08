@@ -181,7 +181,8 @@ module.exports = function (grunt) {
       options: {
         sourceMap: false,
         sourceComments: false,
-        includePaths: ['bower_components','./node_modules/susy/sass','./node_modules/compass-mixins/lib']
+        includePaths: ['bower_components','./node_modules/susy/sass','./node_modules/compass-mixins/lib'],
+        outputStyle: 'nested'
         },
       dist: {
         files: [{
