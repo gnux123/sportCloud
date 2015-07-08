@@ -2,12 +2,12 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>sportCloud</title>
+    <title>各類運動首頁</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" sizes="196x196" href="http://static.ettoday.net/style/mobileweb2014/images/shortcut-icon-196.png">
-          <link rel="shortcut icon" sizes="128x128" href="http://static.ettoday.net/style/mobileweb2014/images/shortcut-icon-128.png">
-          <link rel="apple-touch-icon" sizes="152x152" href="http://static.ettoday.net/style/mobileweb2014/images/apple-touch-icon-152.png">
+    <link rel="shortcut icon" sizes="128x128" href="http://static.ettoday.net/style/mobileweb2014/images/shortcut-icon-128.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://static.ettoday.net/style/mobileweb2014/images/apple-touch-icon-152.png">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css(.tmp) styles/vendor.css -->
@@ -25,9 +25,9 @@
     <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
     <!-- endbuild -->
 
-
     <script src="scripts/common.js"></script>
     <script src="scripts/main.js"></script>
+
 
     <!--[if lt IE 9]>
       <!-- build:js scripts/lt-ie-9.js -->
@@ -37,17 +37,21 @@
     <![endif]-->
 
   </head>
-  <body id="sport" style="background:url(images/main_bg.jpg) #000 top center no-repeat;"  >
+  <body id="sport">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
     <div class="container">
 
       include "layout/_header.html"
 
       <div class="contents">
         <div class="main r1">
-          include "layout/_mainPage.html"
+          include "layout/_breads.html"
+
+          include "layout/_multiActive.html"
+
         </div>
         <div class="sub">
           include "layout/_side.html"

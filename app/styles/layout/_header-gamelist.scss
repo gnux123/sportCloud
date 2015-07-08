@@ -1,51 +1,10 @@
-//gamesList select
+/** 全網比賽日期種類選擇比分列表 **/
 .gameLists {
 	position: relative;
 	height:85px;
 	background: #fff;
 	@include pie-clearfix;
 
-	.selectForm {
-		@include float(left);
-		width:170px;
-		height:100%;
-
-		& > div {
-			height:42px;
-			select { height:42px; }
-
-			&:first-child {
-				height:41px;
-				border-bottom: 1px solid $gray;
-				select { height: 41px; }
-			}
-
-			select {
-				width:100%;
-				text-align: center;
-	  			-moz-appearance: button;
-	  			-webkit-appearance: none;
-	  			appearance: none;
-	  			border:0px;
-	  			border-radius: 0;
-	  			background: #fff;
-
-				text-align: center;
-				color:$gray;
-				@include fontSize($defFont);
-				letter-spacing: 2px;
-
-
-				&.gamesSelect { padding-left: 40%; }
-				&.dateSelect { padding-left: 12%; }
-
-			}
-		}
-
-
-	}
-
-	//game show
 	.gamesShow {
 		position: relative;
 		@include float(left);
@@ -53,125 +12,162 @@
 		height:100%;
 		border-left:1px solid $gray;
 	}
+}
 
 
-	.gamesShowWrap {
-		position: relative;
-		top:0;
-		left:70.5px;
-		width:689px;
-		height:100%;
-		@include pie-clearfix;
 
-		a.slick-slide {
-			@include float(left);
-			display: block;
-			width:114px;
-			height:85px;
-			border-right:1px solid $gray;
+/** 全網比賽日期種類選擇比分列表-日期及種類選擇列表 **/
+.gameLists .selectForm {
+	@include float(left);
+	width:170px;
+	height:100%;
 
-			color:$gray;
-			text-decoration: none;
+	& > div {
+		height:42px;
+		select { height:42px; }
 
-			&:hover {
-				background: $blue;
-				color:#fff;
-			}
-
-			&:last-child { border-right:0px; }
+		&:first-child {
+			height:41px;
+			border-bottom: 1px solid $gray;
+			select { height: 41px; }
 		}
 
-		& > .slick-prev,
-		& > .slick-next {
+		select {
+			width:100%;
+			text-align: center;
+  			-moz-appearance: button;
+  			-webkit-appearance: none;
+  			appearance: none;
+  			border:0px;
+  			border-radius: 0;
+  			background: #fff;
+
+			text-align: center;
+			color:$gray;
+			@include fontSize($defFont);
+			letter-spacing: 2px;
+
+
+			&.gamesSelect { padding-left: 40%; }
+			&.dateSelect { padding-left: 12%; }
+
+		}
+	}
+}
+
+
+/** 全網比賽日期種類選擇比分列表-比分列表效果樣式 **/
+.gameLists .gamesShowWrap {
+	position: relative;
+	top:0;
+	left:70.5px;
+	width:689px;
+	height:100%;
+	@include pie-clearfix;
+
+	a.slick-slide {
+		@include float(left);
+		display: block;
+		width:114px;
+		height:85px;
+		border-right:1px solid $gray;
+
+		color:$gray;
+		text-decoration: none;
+
+		&:hover {
+			background: $blue;
+			color:#fff;
+		}
+
+		&:last-child { border-right:0px; }
+	}
+
+	& > .slick-prev,
+	& > .slick-next {
+		position: absolute;
+		top:0;
+
+		display: block;
+		width:70.5px;
+		height:0;
+		padding-top: 85px;
+		margin-top: 0;
+		overflow: hidden;
+
+
+		&:before {
+			position: absolute;
+			top: 4px;
+			left:0;
+			display: block;
+			width:100%;
+			height:100%;
+
+			text-align: center;
+			color:$gray;
+
+
+			font-family: FontAwesome;
+			@include fontSize($defFont + 54);
+			line-height: 1;
+			color:$gray;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+	}
+
+	& > .slick-prev:before { content: "\f104"; }
+	[dir="rtl"] .slick-prev:before { content: "\f104"; }
+
+	& > .slick-next:before { content: "\f105"; }
+	[dir="rtl"] .slick-next:before { content: "\f105"; }
+
+	& > .slick-prev {
+		left: -70.5px;
+		border-right:1px solid $gray;
+	}
+
+	& > .slick-next {
+		right: -70.5px;
+		border-left:1px solid $gray;
+	}
+}
+
+/** 全網比賽日期種類選擇比分列表-比分列表單一模組樣式 **/
+.gamesShowWrap a.slick-slide {
+	& > span {
+		display: block;
+		width:100%;
+		height:auto;
+	}
+	.gameDate {
+		text-align: center;
+		@include fontSize($defFont - 4);
+		line-height:20px;
+
+	}
+	.gameTeam {
+		position: relative;
+
+		height:30px;
+		@include fontSize($defFont+2);
+		line-height: 30px;
+		letter-spacing: 1px;
+
+		& > i {
 			position: absolute;
 			top:0;
 
-			display: block;
-			width:70.5px;
-			height:0;
-			padding-top: 85px;
-			margin-top: 0;
-			overflow: hidden;
+			&:first-child {
+				left:5px;
+				@include fontSize($defFont + 1);
+			}
 
-
-			&:before {
-				position: absolute;
-				top: 4px;
-				left:0;
-				display: block;
-				width:100%;
-				height:100%;
-
-				text-align: center;
-				color:$gray;
-
-
-				font-family: FontAwesome;
-				@include fontSize($defFont + 54);
-				line-height: 1;
-				color:$gray;
-				-webkit-font-smoothing: antialiased;
-				-moz-osx-font-smoothing: grayscale;
+			&:first-child + i {
+				right:5px;
+				letter-spacing: -0.4px;
 			}
 		}
-
-		& > .slick-prev:before { content: "\f104"; }
-		[dir="rtl"] .slick-prev:before { content: "\f104"; }
-
-		& > .slick-next:before { content: "\f105"; }
-		[dir="rtl"] .slick-next:before { content: "\f105"; }
-
-		& > .slick-prev {
-			left: -70.5px;
-			border-right:1px solid $gray;
-		}
-
-		& > .slick-next {
-			right: -70.5px;
-			border-left:1px solid $gray;
-		}
 	}
-
-	.gamesShowWrap a.slick-slide {
-		& > span {
-			display: block;
-			width:100%;
-			height:auto;
-		}
-
-		.gameDate {
-			text-align: center;
-			@include fontSize($defFont - 4);
-			line-height:20px;
-
-		}
-
-		.gameTeam {
-			position: relative;
-
-			height:30px;
-			@include fontSize($defFont+2);
-			line-height: 30px;
-			letter-spacing: 1px;
-
-			& > i {
-				position: absolute;
-				top:0;
-
-				&:first-child {
-					left:5px;
-					@include fontSize($defFont + 1);
-				}
-
-				&:first-child + i {
-					right:5px;
-					letter-spacing: -0.4px;
-				}
-			}
-		}
-
-
-	}
-
-
 }

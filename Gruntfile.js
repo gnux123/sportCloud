@@ -179,16 +179,17 @@ module.exports = function (grunt) {
     // Compiles Sass to CSS and generates necessary files if requested
     sass: {
       options: {
-        sourceMap: true,
-        sourceComments: true,
-        includePaths: ['bower_components','./node_modules/susy/sass','./node_modules/compass-mixins/lib']
+        sourceMap: false,
+        sourceComments: false,
+        includePaths: ['bower_components','./node_modules/susy/sass','./node_modules/compass-mixins/lib'],
+        outputStyle: 'nested'
         },
       dist: {
         files: [{
           expand: true,
           cwd: '<%= config.app %>/styles',
           src: ['*.{scss,sass}'],
-          dest: '.tmp/styles',
+          dest: '<%= config.dist %>/styles',
           ext: '.css'
         }]
       },
@@ -352,6 +353,7 @@ module.exports = function (grunt) {
             'images/{,*/}*.webp',
             '{,*/}*.html',
             'styles/fonts/{,*/}*.*',
+            'scripts/{main,common}.js',
             '!**/layout/**' //ignore folder
           ]
         }, {
@@ -376,8 +378,8 @@ module.exports = function (grunt) {
         outputFile: '<%= config.dist %>/scripts/vendor/modernizr.js',
         files: {
           src: [
-            '<%= config.dist %>/scripts/{,*/}*.js',
-            '<%= config.dist %>/styles/{,*/}*.css',
+            '!<%= config.dist %>/scripts/{,*/}*.js',
+            '!<%= config.dist %>/styles/{,*/}*.css',
             '!<%= config.dist %>/scripts/vendor/*'
           ]
         },
@@ -395,7 +397,7 @@ module.exports = function (grunt) {
         'copy:styles'
       ],
       dist: [
-        'sass',
+        'sass:dist',
         'copy:styles',
         'imagemin',
         'svgmin'
@@ -453,14 +455,14 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'autoprefixer',
     'concat',
-    'cssmin',
+    //'cssmin',
     'uglify',
     'copy:dist',
     'includes:build',
-    'modernizr',
-    'rev',
-    'usemin',
-    'htmlmin'
+    //'modernizr',
+    //'rev',
+    'usemin'
+    //'htmlmin'
   ]);
 
   grunt.registerTask('default', [

@@ -1,39 +1,4 @@
-.contents {
-	margin-top:20px;
-	width: 100%;
-	height:auto;
-	@include pie-clearfix;
-
-	& > .main {
-		@include float(left);
-		width:685px;
-		height:auto;
-	}
-
-	& > .sub {
-		@include float(right);
-		width:300px;
-		height:auto;
-
-	}
-}
-
-
-//main and sub
-div.main, div.sub {
-	& > div {
-		margin-top:20px;
-		width: 100%;
-		height:auto;
-
-		&:first-child {
-			margin-top:0;
-		}
-	}
-}
-
-
-//slideNews
+/** 首頁輪播新聞樣式 **/
 .slideNews {
 	position: relative;
 	height:310px;
@@ -83,7 +48,7 @@ div.main, div.sub {
 				height:37px;
 				margin-top:1px;
 				padding-left: 10px;
-				
+
 				color:#fff;
 				line-height: 37px;
 				text-decoration: none;
@@ -100,7 +65,7 @@ div.main, div.sub {
 
 }
 
-//latestVideos
+/** 最新影音模組樣式 **/
 .latestVideos {
 	.lvTitle {
 		@extend %titleStyle;
@@ -123,7 +88,7 @@ div.main, div.sub {
 }
 
 
-//focusNews
+/** 焦點新聞模組樣式 **/
 .foucsNews {
 	margin-top: 20px;
 

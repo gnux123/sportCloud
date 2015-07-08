@@ -7,7 +7,36 @@
 	height:auto;
 }
 
-//breads
+/** 內文欄位及側邊欄樣式 **/
+.contents {
+	margin-top:20px;
+	width: 100%;
+	height:auto;
+	@include pie-clearfix;
+
+	& > .main {
+		@include float(left);
+		width:685px;
+		height:auto;
+	}
+
+	& > .sub {
+		@include float(right);
+		width:300px;
+		height:auto;
+
+	}
+}
+
+div.main, div.sub {
+	& > div {
+		margin-bottom:20px;
+		width: 100%;
+		height:auto;
+	}
+}
+
+/** 麵包屑模組樣式 **/
 .main > div.breads {
 	width:683px;
 	height:28px;
@@ -38,7 +67,7 @@
 }
 
 
-//content dateSelect modules
+/** 日期選擇模組樣式 **/
 .dateSelects {
 	margin:20px 0;
 
@@ -71,10 +100,10 @@
 
 			@include fontSize($defFont);
 			line-height: 21px;
-			text-indent: 11.6px; 
+			text-indent: 11.6px;
 
 		}
-		
+
 
 		&:first-child {
 			position: relative;
@@ -105,7 +134,7 @@
 	}
 }
 
-//pageNums
+/** 頁碼選擇模組樣式 **/
 .pageNums {
 	margin-top:20px;
 	display: block;
@@ -150,7 +179,7 @@
 		color:#FFF;
 		letter-spacing: 1px;
 		line-height: 24px;
-		font-weight: 100;		
+		font-weight: 100;
 	}
 
 }

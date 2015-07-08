@@ -1,3 +1,7 @@
+/**
+* 今日賽事及近期賽事模組 共同樣式 
+**/
+
 div.todayGames,
 div.nearTermGames {
 	& > div.title {
@@ -6,8 +10,8 @@ div.nearTermGames {
 
 		width:680px;
 		padding-left: 5px;
-		background: $blue; 
-		
+		background: $blue;
+
 		@include fontSize($defFont + 2);
 		font-style: normal;
 		line-height: 31px;
@@ -27,7 +31,7 @@ div.nearTermGames {
 	}
 }
 
-//todayGames Module
+/** 今日賽事模組樣式 **/
 div.todayGames {
 	& > div.title + div > ul li a {
 		position: relative;
@@ -41,7 +45,7 @@ div.todayGames {
 
 	& > .todayGamesContent > ul li a {
 		height:100px;
-		
+
 		& > div {
 			height:100px;
 
@@ -52,11 +56,11 @@ div.todayGames {
 	}
 
 
-	//component 
+	//component
 	.gameCatesName {
 		width:14.6%;
 		background: $blue;
-		
+
 		@include fontSize($defFont + 11);
 		color:#fff;
 	}
@@ -83,7 +87,7 @@ div.todayGames {
 }
 
 
-//nearTermGames Module
+/** 近期賽事模組樣式 **/
 div.nearTermGames {
 	margin-top:30px;
 
@@ -114,9 +118,9 @@ div.nearTermGames {
 			letter-spacing: 1px;
 		}
 
-		& > span.dates { 
+		& > span.dates {
 			top:25px;
-			height:100px; 
+			height:100px;
 
 			line-height:35px;
 			@include fontSize($defFont + 7);
@@ -125,7 +129,7 @@ div.nearTermGames {
 
 		& > span.area {
 			bottom:0;
-			height:40px; 
+			height:40px;
 			background: $blue-d;
 
 			line-height: 40px;

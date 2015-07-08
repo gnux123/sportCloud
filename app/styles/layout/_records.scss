@@ -1,180 +1,179 @@
-.main > div.recordContent {
-	.recordBoard {
+/** 比分戰報-記分板模組樣式 **/
+div.recordContent >	.recordBoard {
+	display: block;
+	width:100%;
+	height: 130px;
+	background: #fff;
+
+	& > ul {
 		display: block;
 		width:100%;
-		height: 130px;
-		background: #fff;
-
-		& > ul {
-			display: block;
-			width:100%;
-			height:130px;
-			@include pie-clearfix;
-		}
-
-		& > ul li {
-			position: relative;
-			@include float(left);
-			display: block;
-			height:130px;
-			letter-spacing: 1px;
-
-			&.recordCounts {
-				width:313px;
-				border-width:0 1px;
-				border-style:solid;
-				border-color:$gray-l;
-			}
-
-			&.teamStamp {
-				width:185px;
-			}
-		}
-
-		& > ul li.teamStamp {
-			& > div.homePic,
-			& > div.awayPic {
-				position: relative;
-				width: 100%;
-				height: 100%;
-				overflow: hidden;
-
-				& > img {
-					position: absolute;
-					top:45%;
-					left:50%;
-					margin-top:-92.5px;
-					margin-left:-92.5px;
-				}
-			}
-
-			& > span {
-				position: absolute;
-				z-index: 1;
-				bottom: 0;
-
-				display: block;
-				width:100%;
-				padding:5px 0;
-
-				text-align: center;
-			}
-		}
-
-		& > ul li.recordCounts {
-			position: relative;
-			span {
-				position: absolute;
-				top:0;
-
-				display: block;
-				width:156px;
-				height:130px;
-
-				line-height: 130px;
-				@include fontSize($defFont + 51);
-				color:$blue;
-				text-align: center;
-			}
-
-			span:first-child {
-				left:0;
-
-				&:before {
-					position: absolute;
-					z-index: 1;
-
-					display: inline-block;
-					content: "：";
-					height:130px;
-					margin-left:74%;
-
-					@include fontSize($defFont + 26);
-					font-family: arial;
-					line-height: 130px;
-					color:#000;
-
-				}
-
-			}
-
-			span:first-child + span {
-				right:0;
-			}
-
-		}
-
+		height:130px;
+		@include pie-clearfix;
 	}
 
-	//recordZone Area
-	.recordZone {
-		margin-top: 20px;
+	& > ul li {
+		position: relative;
+		@include float(left);
+		display: block;
+		height:130px;
+		letter-spacing: 1px;
 
-		& > .title {
+		&.recordCounts {
+			width:313px;
+			border-width:0 1px;
+			border-style:solid;
+			border-color:$gray-l;
+		}
+
+		&.teamStamp {
+			width:185px;
+		}
+	}
+
+	& > ul li.teamStamp {
+		& > div.homePic,
+		& > div.awayPic {
 			position: relative;
-			display: block;
-			width:660px;
-			height:20px;
-			padding-left: 25px;
+			width: 100%;
+			height: 100%;
 			overflow: hidden;
 
-			@include fontSize($defFont + 3);
-			line-height: 20px;
-			color:#fff;
-			letter-spacing: 1px;
-			font-weight:100;
+			& > img {
+				position: absolute;
+				top:45%;
+				left:50%;
+				margin-top:-92.5px;
+				margin-left:-92.5px;
+			}
+		}
+
+		& > span {
+			position: absolute;
+			z-index: 1;
+			bottom: 0;
+
+			display: block;
+			width:100%;
+			padding:5px 0;
+
+			text-align: center;
+		}
+	}
+
+	& > ul li.recordCounts {
+		position: relative;
+		span {
+			position: absolute;
+			top:0;
+
+			display: block;
+			width:156px;
+			height:130px;
+
+			line-height: 130px;
+			@include fontSize($defFont + 51);
+			color:$blue;
+			text-align: center;
+		}
+
+		span:first-child {
+			left:0;
 
 			&:before {
 				position: absolute;
-				left:0;
-				top:0;
+				z-index: 1;
 
-				display: block;
-				content: "";
-				width:20px;
-				height: 20px;
-				background: $orange;
+				display: inline-block;
+				content: "：";
+				height:130px;
+				margin-left:74%;
 
+				@include fontSize($defFont + 26);
+				font-family: arial;
+				line-height: 130px;
+				color:#000;
 
 			}
+
 		}
 
-		& > div {
-			margin-top:20px;
+		span:first-child + span {
+			right:0;
+		}
+
+	}
+
+}
+
+/** 比分戰報-各節記分模組樣式 **/
+div.recordContent > .recordZone {
+	margin-top: 20px;
+
+	& > .title {
+		position: relative;
+		display: block;
+		width:660px;
+		height:20px;
+		padding-left: 25px;
+		overflow: hidden;
+
+		@include fontSize($defFont + 3);
+		line-height: 20px;
+		color:#fff;
+		letter-spacing: 1px;
+		font-weight:100;
+
+		&:before {
+			position: absolute;
+			left:0;
+			top:0;
+
 			display: block;
-			width:100%;
-			height:auto;
+			content: "";
+			width:20px;
+			height: 20px;
+			background: $orange;
+
+
 		}
 	}
 
+	& > div {
+		margin-top:20px;
+		display: block;
+		width:100%;
+		height:auto;
+	}
+}
 
-	//recordLive pagenums
-	.pageNums.recordLivePageNums {
-		margin-top:0;
-		padding:20px 0;
 
-		background: $gray-l;
+/** 比分戰報-賽事直播下方頁碼樣式 **/
+.pageNums.recordLivePageNums {
+	margin-top:0;
+	padding:20px 0;
 
-		& > ul > li {
-			margin:0 5px;
+	background: $gray-l;
 
-			&.nums.active > a {
-				background: $gray;
-			}
-		}
+	& > ul > li {
+		margin:0 5px;
 
-		& > ul > li a {
-			color:#000;
-			border:1px solid $gray;
-
-			@include fontSize($defFont);
+		&.nums.active > a {
+			background: $gray;
 		}
 	}
 
+	& > ul > li a {
+		color:#000;
+		border:1px solid $gray;
 
-
-	//recordMessageBoard
-	.recordMessage {
-		@extend %messageBoard;
+		@include fontSize($defFont);
 	}
+}
+
+
+
+/** 比分戰報-網友留言模組樣式 **/
+.recordMessage {
+	@extend %messageBoard;
 }

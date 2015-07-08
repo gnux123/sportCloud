@@ -1,3 +1,4 @@
+/** 焦點運動員內頁樣式設定 **/
 .main > div.focusPersonContent {
   width: 100%;
   height: auto;
@@ -11,172 +12,173 @@
     letter-spacing: 1px;
     margin-bottom: 20px;
   }
+}
 
-  //personInfo settings
-  .personInfo {
-    @include float(left);
-    width: 410px;
-    height:auto;
 
-    & > div {
+/** 焦點運動員介紹區塊樣式 **/
+.personInfo {
+  @include float(left);
+  width: 410px;
+  height:auto;
+
+  & > div {
+    width:100%;
+    margin-bottom: 20px;
+
+    box-sizing: border-box;
+  }
+}
+
+/** 焦點運動員個人介紹樣式 **/
+.personIntro {
+  @extend %personModule;
+
+  & > .wrap {
+    @include fontSize($defFont);
+		color: #fff;
+		line-height: 24px;
+		letter-spacing: 1px;
+  }
+
+}
+
+/** 焦點運動員相關新聞樣式 **/
+.personNews {
+  @extend %personModule;
+
+  & > .wrap {
+    margin-top: 0;
+
+    ul > li {
       width:100%;
-      margin-bottom: 20px;
+      height:auot;
+      margin-top: 1px;
 
+      &:first-child { margin-top:0; }
+    }
+
+    ul > li > a {
+      display: block;
+      width: 100%;
+      height: 37px;
       box-sizing: border-box;
+      padding:0 15px;
+      background: $gray-d;
+
+      @include fontSize($defFont + 1);
+      color: #fff;
+      line-height: 37px;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    a.moreLinks {
+      display: block;
+      width: 100%;
+      padding: 0 15px;
+      box-sizing: border-box;
+
+      @include fontSize($defFont + 1);
+      color: #fff;
+      line-height: 30px;
+      letter-spacing: 1px;
+      text-decoration: none;
+
+    }
+
+  }
+}
+
+/** 焦點運動員留言板樣式 **/
+.personComments {
+  @extend %personModule;
+
+  & > .wrap { background: #fff; }
+}
+
+
+
+
+/** 焦點運動員生涯紀錄樣式 **/
+.personEvents {
+  @include float(right);
+  width: 275px;
+  height:auto;
+  padding: 0 15px;
+
+  box-sizing: border-box;
+
+  h3 {
+    height: 35px;
+
+    @include fontSize($defFont + 3);
+    color: #fff;
+    line-height: 35px;
+    letter-spacing: 2px;
+  }
+
+  .peTree {
+    margin-top: 20px;
+  }
+
+  .peTree > li {
+    position: relative;
+    display: block;
+    width:100%;
+    height: auto;
+    padding:0 20px 32px 20px;
+
+    border-left: 5px solid $gray-d;
+
+    &:before {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: -11px;
+      display: block;
+      content: "";
+      width: 18px;
+      height: 18px;
+      background: $gray-d;
+
+      border-radius: 50%;
+
     }
   }
 
-  .personIntro {
-    @extend %personModule;
-
-    & > .wrap {
-      @include fontSize($defFont);
-  		color: #fff;
-  		line-height: 24px;
-  		letter-spacing: 1px;
-    }
-
-  }
-
-  .personNews {
-    @extend %personModule;
-
-    & > .wrap {
-      margin-top: 0;
-
-      ul > li {
-        width:100%;
-        height:auot;
-        margin-top: 1px;
-
-        &:first-child { margin-top:0; }
-      }
-
-      ul > li > a {
-        display: block;
-        width: 100%;
-        height: 37px;
-        box-sizing: border-box;
-        padding:0 15px;
-        background: $gray-d;
-
-        @include fontSize($defFont + 1);
-        color: #fff;
-        line-height: 37px;
-        letter-spacing: 1px;
-        text-decoration: none;
-      }
-
-      a.moreLinks {
-        display: block;
-        width: 100%;
-        padding: 0 15px;
-        box-sizing: border-box;
-
-        @include fontSize($defFont + 1);        
-        color: #fff;
-        line-height: 30px;
-        letter-spacing: 1px;
-        text-decoration: none;
-
-      }
-
-    }
-  }
-
-  //person Comments
-  .personComments {
-    @extend %personModule;
-
-    & > .wrap { background: #fff; }
-  }
-
-
-
-
-  //person good events
-  .personEvents {
-    @include float(right);
-    width: 275px;
-    height:auto;
-    padding: 0 15px;
+  .peDesc {
+    position: relative;
+    width: 200px;
+    height: auto;
+    border: 1px solid $gray-d;
+    background: $gray-l;
+    padding: 40px 10px 10px 10px;
 
     box-sizing: border-box;
 
-    h3 {
-      height: 35px;
+    & > span {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      display: block;
+      width: 100px;
+      height: 30px;
+      background: $blue-l;
 
-      @include fontSize($defFont + 3);
+      @include fontSize($defFont);
       color: #fff;
-      line-height: 35px;
+      line-height: 30px;
+      text-align: center;
+      letter-spacing: 1.5px;
+
+    }
+
+    & > p {
+      @include fontSize($defFont + 1);
+      color: #000;
+      line-height: 25px;
       letter-spacing: 2px;
     }
-
-    .peTree {
-      margin-top: 20px;
-    }
-
-    .peTree > li {
-      position: relative;
-      display: block;
-      width:100%;
-      height: auto;
-      padding:0 20px 32px 20px;
-
-      border-left: 5px solid $gray-d;
-
-      &:before {
-        position: absolute;
-        z-index: 2;
-        top: 0;
-        left: -11px;
-        display: block;
-        content: "";
-        width: 18px;
-        height: 18px;
-        background: $gray-d;
-
-        border-radius: 50%;
-
-      }
-    }
-
-    .peDesc {
-      position: relative;
-      width: 200px;
-      height: auto;
-      border: 1px solid $gray-d;
-      background: $gray-l;
-      padding: 40px 10px 10px 10px;
-
-      box-sizing: border-box;
-
-      & > span {
-        position: absolute;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        display: block;
-        width: 100px;
-        height: 30px;
-        background: $blue-l;
-
-        @include fontSize($defFont);
-        color: #fff;
-        line-height: 30px;
-        text-align: center;
-        letter-spacing: 1.5px;
-
-      }
-
-      & > p {
-        @include fontSize($defFont + 1);
-        color: #000;
-        line-height: 25px;
-        letter-spacing: 2px;
-      }
-    }
   }
-
-
 }

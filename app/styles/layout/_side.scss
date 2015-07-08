@@ -1,4 +1,4 @@
-//gameLiveScore
+/** 側邊欄-直播比賽比數模組樣式 **/
 .gameLiveScore {
 	width:100%;
 	height:300px;
@@ -103,8 +103,7 @@
 
 }
 
-
-//latestNews Module
+/** 側邊欄-最新新聞模組樣式 **/
 .latestNews {
 	width:100%;
 	height:auto;
@@ -148,7 +147,7 @@
 
 }
 
-
+/** 側邊欄-焦點運動員模組樣式 **/
 .focusPerson {
 
 	&,
@@ -303,7 +302,7 @@
 
 }
 
-//nearTerm events
+/** 側邊欄-近期活動模組樣式 **/
 .nearTermEvents	{
 	& > .nteTitle {
 		@extend %titleStyle;
