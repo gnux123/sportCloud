@@ -9,19 +9,22 @@ $(function(){
   	slidesToScroll: 1
 	});
 
+	var _subNavs = $(".subNavs");
+
+	_subNavs.hide();
 	$(".cates > li a").hover(function(){
-		var _index = $(this).parent("li").index();
+		var _name = $(this).attr("href").split(".")[0];
 
 		$(this).parent("li")
 			   .addClass("active")
 			   .siblings("li.active")
 			   .removeClass("active");
 
-		if(_index === 6 || _index === 8) {
-			$(".subNavs").hide();
+		if(_name === "#" || _name === " " || _name === "javascript:void(0);" || _name === "profiles") {
+			_subNavs.hide();
 		}else{
-			$(".subNavs").show();
-			$(".subNavs ul").eq(_index).show().siblings("ul").hide();
+			_subNavs.show();
+			_subNavs.find("ul."+_name).show().siblings("ul").hide();
 		}
 
 	});
